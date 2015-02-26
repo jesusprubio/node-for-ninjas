@@ -20,8 +20,7 @@
 // This example is a simple TLS client, analogue to the TCP one
 // http://nodejs.org/api/tls.html
 
-// To test this we can use the module "http-server"
-// https://github.com/nodeapps/http-server
+// To test this we can also use the module "http-server"
 // Steps:
 // - npm i -g http-server
 // - openssl genrsa -out key.pem
@@ -30,6 +29,9 @@
 // - rm csr.pem
 // - Not connecting: http-server -a 127.0.0.1
 // - Connecting: http-server -a 127.0.0.1 -S
+
+// Check the differences with  and without TLS
+
 'use strict';
 
 var tls = require('tls'),
@@ -58,13 +60,29 @@ var tls = require('tls'),
 //        secureProtocol: 'SSLv3_method'
     },
     MSG = 'Hi world! :)',
+    TIMEOUT = 5000,
 
+    connected = false,
     socket;
 
-// Here we're also working in the socket layer
+
+function timeoutCb() {
+    if (!connected) {
+        console.log('Error: Timeout');
+
+        process.exit(1);
+    }
+
+    // We need this to avoid errors
+    socket.close();
+}
+
+
+// Here we are also working in the socket layer
 socket = tls.connect(
     OPTIONS,
     function () {
+        connected = true;
         console.log('I\'m connected to server!');
 
         // It's not going to work with the server because we don't speak any
@@ -72,6 +90,7 @@ socket = tls.connect(
         socket.write(MSG);
     }
 );
+setTimeout(timeoutCb, TIMEOUT);
 
 socket.on('data', function (data) {
     console.log('Message reveived:');
@@ -82,9 +101,12 @@ socket.on('data', function (data) {
 
 socket.on('end', function () {
     console.log('I\'ve been disconnected from the server :(');
+
+    process.exit(1);
 });
 
 socket.on('error', function (err) {
+    connected = true;
     console.log('Error:');
     console.log(err);
 

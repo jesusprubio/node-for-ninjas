@@ -27,12 +27,11 @@
 
 var WebSocketClient  = require('websocket').client,
 
-    SERVER_URI = 'ws://echo.websocket.org',
-    // If the port is different from 80
-    // For this test server the "Timeout" error is launched
+//    SERVER_URI = 'ws://echo.websocket.org',
+    // If the port is different from 80 ( in this case "Timeout" is launched)
 //    SERVER_URI = 'ws://echo.websocket.org:8080',
     // The library manages the TLS socket for us
-//    SERVER_URI = 'wss://echo.websocket.org',
+    SERVER_URI = 'wss://echo.websocket.org',
     OPTIONS = {
         // Since this PR we can set the TLS options as in the TLS module
         // https://github.com/theturtle32/WebSocket-Node/pull/129
@@ -44,14 +43,14 @@ var WebSocketClient  = require('websocket').client,
     TIMEOUT = 5000,
 
     // To avoid the launch of our timeout error
-    received = false,
+    connected = false,
     // To avoid returning multiple errors
     wsError = false,
     client;
 
 
 function timeoutCb() {
-    if (!received) {
+    if (!connected) {
         console.log('Error: Timeout');
 
         process.exit(1);
@@ -65,12 +64,8 @@ function timeoutCb() {
 // https://github.com/theturtle32/WebSocket-Node/blob/master/docs/WebSocketClient.md
 client = new WebSocketClient(OPTIONS);
 
-// The client don't support any close function, so we need this callback
-// to emulate it
-setTimeout(timeoutCb, TIMEOUT);
-
 client.on('connectFailed', function (err) {
-    received = true;
+    connected = true;
     if (!wsError) {
         console.log('Error: connectFailed:');
         console.log(err);
@@ -80,6 +75,7 @@ client.on('connectFailed', function (err) {
 });
 
 client.on('connect', function (connection) {
+    connected = true;
 
     connection.on('error', function (err) {
         if (!wsError) {
@@ -98,10 +94,9 @@ client.on('connect', function (connection) {
 
     connection.on('message', function (message) {
         console.log('Message reveived:');
-        received = true;
 
         console.log(message.utf8Data);
-        process.exit(1);
+        process.exit(0);
     });
 
     console.log('I\'m connected to server!');
@@ -109,6 +104,7 @@ client.on('connect', function (connection) {
     connection.sendUTF(MSG);
 });
 
+setTimeout(timeoutCb, TIMEOUT);
 client.connect(SERVER_URI, null);
 // Sometimes we need to specify the subprotocol, but not in this test sever
 //client.connect(SERVER_URI, 'sip');

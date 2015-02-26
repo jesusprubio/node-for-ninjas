@@ -28,8 +28,23 @@ var net = require('net'),
 
     MSG_CLIENT = 'Hi world! :)',
     MSG_SERVER = 'Hi luser! :P',
+    TIMEOUT = 5000,
 
-    server;
+    // Here we've a "connected" event, so we use it to check the timeout
+    connected = false,
+    server, socket;
+
+
+function timeoutCb() {
+    if (!connected) {
+        console.log('Error: Timeout');
+
+        process.exit(1);
+    }
+
+    // We need this to avoid errors
+    socket.close();
+}
 
 
 // SERVER
@@ -66,10 +81,6 @@ server = net.createServer(
         // When the other end of the socket sends a FIN packet
         client.on('end', function () {
             console.log('SERVER: Client disconnected');
-
-            // The same here, not needed but dangerous not to close it in real apps
-//            server.close();
-            process.exit(0);
         });
 
         client.write(MSG_SERVER);
@@ -87,7 +98,6 @@ portfinder.getPort(function (err, port) {
     }
 
     server.listen(port, function () { // "listening" listener
-        var socket;
 
         console.log('SERVER: I\'m listening ... in the port ' + port);
 
@@ -96,7 +106,7 @@ portfinder.getPort(function (err, port) {
 
         // CLIENT
 
-//        // We're using the socket directly here
+        // We're using the socket directly here
 
         // We always prefer to pass the whole object options!
         // (JSHint "maxparams")
@@ -110,24 +120,32 @@ portfinder.getPort(function (err, port) {
         //        family: 6
             },
             function () { // "connect" listener
+                connected = true;
                 console.log('CLIENT: I\'m connected to server!');
                 socket.write(MSG_CLIENT);
             }
         );
+        setTimeout(timeoutCb, TIMEOUT);
 
         socket.on('data', function (data) {
             console.log('CLIENT: Message reveived:');
             console.log(data.toString());
 
-            // Closing the the client side socket
+            // Closing the the client side socket, we're exiting but it is
+            // really dangerous not to close them in real apps (OS erros, etc.)
             socket.end();
+
+            process.exit(0);
         });
 
         socket.on('end', function () {
             console.log('CLIENT: I\'ve been disconnected from the server :(');
+
+            process.exit(1);
         });
 
         socket.on('error', function (err) {
+            connected = true;
             console.log('CLIENT: Error:');
             console.log(err);
 

@@ -24,6 +24,8 @@
 
 var dgram = require('dgram'),
     socket = dgram.createSocket('udp4'),
+    // IPv6
+//    socket = dgram.createSocket('udp6'),
     portfinder = require('portfinder'),
 
     // PROBLEM: How do you guarantee that it's free?
@@ -31,12 +33,30 @@ var dgram = require('dgram'),
     // We do not reinvent the wheel! So we prefer to use a module
     // - https://github.com/indexzero/node-portfinder
 //    SERVER_PORT = 4444,
-    MSG = new Buffer('Hi world! :)');
+    MSG = new Buffer('Hi world! :)'),
+    TIMEOUT = 5000,
+
+    // The client don't support any close function, so we need this callback
+    // to emulate it. This var is to control of our timeout error
+    received = false;
+
+
+function timeoutCb() {
+    if (!received) {
+        console.log('Error: Timeout');
+
+        process.exit(1);
+    }
+
+    // We need this to avoid errors
+    socket.close();
+}
 
 
 // SERVER
 
 socket.on('message', function (msg, rinfo) {
+    received = true;
     console.log('SERVER: Message reveived from ' + rinfo.address + ':' + rinfo.port);
     // It's a Buffer and we need a String to print
     console.log(msg.toString());
@@ -55,9 +75,13 @@ socket.on('listening', function () {
 
 socket.on('close', function () {
     console.log('SERVER: I\'ve been closed :(');
+
+    process.exit(1);
 });
 
 socket.on('error', function (err) {
+    // We also set it in this case to avoid returning multiple errors (Timeout)
+    received = true;
     console.log('SERVER: Error:');
     console.log(err);
 
@@ -82,6 +106,11 @@ portfinder.getPort(function (err, port) {
     // It could be in a different file but we're reusing the socket
     // and including here for simplicity
     socket.send(MSG, 0, MSG.length, port, "localhost", function (err) {
+        // To test the timeout an wasy way it to target an online
+        // (non compatible) host/port (ie: The "http-server" module)
+        // https://github.com/nodeapps/http-server (default setup)
+        // Check the differences between them (and with the server down)
+//    socket.send(MSG, 0, MSG.length, 8080, "localhost", function (err) {
         if (err) {
             console.log('CLIENT: Error: send():');
             console.log(err);
@@ -91,4 +120,8 @@ portfinder.getPort(function (err, port) {
             console.log('CLIENT: Message sent');
         }
     });
+    // The UDP module doesn't provide a "connected" event so
+    // we look for a timeout when we sent the packet
+    setTimeout(timeoutCb, TIMEOUT);
+
 });

@@ -52,6 +52,7 @@ We think it's the better way to contribute to make the Node community still more
 ## 2. Some fun
 - [How "require" works](http://thenodeway.io/posts/how-require-actually-works/)
 - [Error-first callback](http://thenodeway.io/posts/understanding-error-first-callbacks/): CPS
+- Those ones which we think to be the best option
 - Dependencies installed globally for now (ie: npm i -g ping)
 
 ### Examples
