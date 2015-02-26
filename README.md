@@ -8,7 +8,11 @@ A handbook for security experts who like JavaScript and javascripters who like (
 *Work in progress*
 
 ### Motivation
-All we know [JavaScript is taking the world](http://githut.info/), moreover with the Node irruption the rules have changed and we can use the same language also in the server side. All kind of servers were written, specially those ones related with the web (ie: [Express](http://expressjs.com/)), and [are being succesfully used in the wild](http://nodejs.org/industry/). Two years ago we were using Node at work so, one day, we also started to use it to write our day to day security stuff. During this time we met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn. We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy the Node community ;).
+All we know [JavaScript is taking the world](http://githut.info/), moreover with the Node irruption the rules have changed and we can use the same language also in the server side. All kind of servers were written, specially those ones related with the web (ie: [Express](http://expressjs.com/)), and [are being succesfully used in the wild](http://nodejs.org/industry/). Two years ago we were using Node at work so, one day, we also started to use it to write our day to day security stuff.
+
+During this time we met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn.
+
+We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy the Node community ;).
 
 ### Authors
 - [@jesusprubio](https://twitter.com/jesusprubio)
@@ -155,5 +159,5 @@ TODO
  - IRC: #assaultjs
  - Twitter: @assaultjs
 - **Framework**
- - Demo still not available, by the way the [Bluebox-ng demo](https://www.youtube.com/watch?v=M-6k4Md3qEQ) is similar for now
+ - Demo still not available, by the way the [Bluebox-ng one](https://www.youtube.com/watch?v=M-6k4Md3qEQ) is similar for now
  - [Design](https://github.com/assaultjs/assaultjs)

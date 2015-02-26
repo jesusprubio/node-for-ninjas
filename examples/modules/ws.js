@@ -20,17 +20,22 @@
 // This example is a simple websocket (and secure) client
 // https://github.com/theturtle32/WebSocket-Node
 
-// To test this we can use the server included in this example:
+// To test this we can use the echo server included in this example:
 // https://www.websocket.org/echo.html
 
 'use strict';
 
 var WebSocketClient  = require('websocket').client,
 
-//    SERVER_URI = 'ws://echo.websocket.org',
-    SERVER_URI = 'wss://echo.websocket.org',
+    SERVER_URI = 'ws://echo.websocket.org',
+    // If the port is different from 80
+    // For this test server the "Timeout" error is launched
+//    SERVER_URI = 'ws://echo.websocket.org:8080',
+    // The library manages the TLS socket for us
+//    SERVER_URI = 'wss://echo.websocket.org',
     OPTIONS = {
-        // PR: https://github.com/theturtle32/WebSocket-Node/pull/129
+        // Since this PR we can set the TLS options as in the TLS module
+        // https://github.com/theturtle32/WebSocket-Node/pull/129
         tlsOptions: {
             rejectUnauthorized : false
         }
@@ -87,6 +92,8 @@ client.on('connect', function (connection) {
 
     connection.on('close', function () {
         console.log('I\'ve been closed :(');
+
+        process.exit(1);
     });
 
     connection.on('message', function (message) {
@@ -94,6 +101,7 @@ client.on('connect', function (connection) {
         received = true;
 
         console.log(message.utf8Data);
+        process.exit(1);
     });
 
     console.log('I\'m connected to server!');
@@ -101,5 +109,6 @@ client.on('connect', function (connection) {
     connection.sendUTF(MSG);
 });
 
-//self.megaSocket.connect(SERVER_URI, 'sip');
-client.connect(SERVER_URI, 'echo');
+client.connect(SERVER_URI, null);
+// Sometimes we need to specify the subprotocol, but not in this test sever
+//client.connect(SERVER_URI, 'sip');
