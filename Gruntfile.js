@@ -19,7 +19,7 @@
 
 
 module.exports = function (grunt) {
-    var srcs =  ['Gruntfile.js', 'index.js', 'examples/*.js', 'bin/*.js', 'modules/*.js'];
+    var srcs =  ['Gruntfile.js', 'examples/**/*.js'];
 
     // Load all Grunt tasks at once
     require('load-grunt-tasks')(grunt);
@@ -29,14 +29,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
-            all:,
+            all: srcs,
             options: {
                 jshintrc: true,
                 reporter: require('jshint-stylish')
             }
         },
         jscs: {
-            src: ['Gruntfile.js', 'index.js', 'examples/*.js', 'bin/*.js', 'modules/*.js'],
+            src: srcs,
             options: {
                 config: '.jscsrc',
                 reporter: require('jscs-stylish').path

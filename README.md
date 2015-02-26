@@ -3,7 +3,8 @@ A handbook for security experts who like JavaScript and javascripters who like (
 >Don't Reinvent The Wheel, Unless You Plan on Learning More About Wheels
 (by [@codinghorror](http://blog.codinghorror.com/dont-reinvent-the-wheel-unless-you-plan-on-learning-more-about-wheels/))
 
-## About this document
+
+## 1. Introduction
 *Work in progress*
 
 ### Motivation
@@ -18,7 +19,7 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
 <br><br>
 - Contents: [<img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.eu.png" height="40" alt="CC BY-NC SA 3.0">](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
-## Why Node?
+### Why Node?
 - One language to rule them all -> **Productivity**
 - Performance
  - Asyncronous I/O -> **Fast** & Simple (vs. multithreading) (ie: scanner, brute-forcer, etc.)
@@ -28,7 +29,7 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
 - **Community driven**
  - [io.js](https://iojs.org/en/index.html) vs. [Node.js®](http://nodejs.org/)
 
-## Sharpen your knife
+### Sharpen your knife
 - Must:
  - [JavaScript For Cats](http://jsforcats.com/)
  - [The art of Node](https://github.com/maxogden/art-of-node#the-art-of-node)
@@ -41,19 +42,15 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
  - [Eloquent JavaScript](http://eloquentjavascript.net/)
  - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/)
  - [Learn JavaScript Essentials](https://medium.com/javascript-scene/learn-javascript-b631a4af11f2)
+ - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
 
-## Usefull modules
+
+## 2. Some fun
 - [How "require" works](http://thenodeway.io/posts/how-require-actually-works/)
 - [Error-first callback](http://thenodeway.io/posts/understanding-error-first-callbacks/): CPS
+- Dependencies installed globally for now (ie: npm i -g ping)
 
 ### Examples
-- Sockets
- - UDP
- - TCP
- - TLS
- - WS(S)
-- HTTP(S)
-- Request (redirection, etc)
 - Ping
 - Ping TCP
 - Whois
@@ -63,22 +60,59 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
 - Wifi scanning
 - DNS resolve (dns-axfr)
 - DNS reverse
-- HTTP banner grabbing
-- Host/Port scanning (Evilscan vs. node-portscanner)
-- Nmap (libnmap)
+- Host/Port scanning (node-portscanner)
+- Speeding up Nmap (libnmap - http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
 - DNS brute-force (Subquest)
-- Exploit searching (Exploitsearch)
-- SHODAN API
-- Fuzzing (Faker, Surku)
-- Metasploit (msfnode)
-- Radare (radare2-bindings)
-- SIP ping
-- SIP authentication
+- [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
+- [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
+ - API
+ - Exploits
+ - Stream
+ - Popular (RSS)
+- [SIP ping](examples/modules/sip/sipPing.js)
+- [SIP authentication](examples/modules/sip/sipAuthentication.js)
 - MongoDB authentication
 - HTTP authentication
-- Capturing packets
+- Fuzzing
+ - Faker
+ - Surku
 
-## Owning the asynchrony
+
+## 3. Let's write something
+
+### Examples
+- Sockets
+ - [UDP](examples/modules/udp.js)
+ - [TCP](examples/modules/tcp.js)
+  - IPv6
+ - [TLS](examples/modules/tls.js)
+ - [WS(S)](examples/modules/ws.js)
+ - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only
+- Web banner grabbing
+ - HTTP core
+ - Request.js
+- Capturing packets
+- Metasploit (msfnode)
+- Radare (radare2-bindings)
+
+
+## 4. A good NPM module
+- package.json
+- Patterns:
+ - [Singleton](http://thenodeway.io/posts/designing-singletons/)
+ - [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
+- Node inspector
+- Grunt :) vs. Gulp (streams)
+- grunt-time
+- JSHint+JSCS
+- Retire.js
+- time?
+
+### Example
+ - Exploitsearch
+
+
+## 5. P0wning the asynchrony
 - for + maxSockets
 - [Async](https://github.com/caolan/async)
  - Streams: [Highland](http://highlandjs.org/)
@@ -87,35 +121,34 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
 - HTTP DoS
 - Web path brute-force
 - TCP DoS
-
-## Writing our modules
-- Boilerplate (Exploitsearch):
- - package.json
- - Patterns: [Singleton](http://thenodeway.io/posts/designing-singletons/) and [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
- - Node inspector
- - Grunt :) vs. Gulp (streams)
- - JSHint+JSCS
- - Retire.js
-
-### Examples
+- TFTP brute-force
 - Scanner
  - Arrays and objects powers
- - Complexity kills, careful
- - Lazy evaluation (Underscore vs. Lodash vs. Lazy.js)
+ - Complexity kills, careful -> Lazy evaluation (Underscore vs. Lodash vs. Lazy)
 - Brute-forcer
 - Fuzzer
 - Continuous pentesting
 
-## Finishing touches
+
+## 6. Performance
+TODO
+
+
+## 7. Finishing touches
+
 ### Examples
 - Cli
- - Manual implementation
+ - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
  - Commander: Command line
  - Celeri: Command line and interactive
-- Reporting: JSON
+- Reporting: JSON (Bluebox-ng report)
 - Database: [Mongoose](https://www.youtube.com/playlist?list=PL5wy-Ijp__A2-ZSePUHXPMwpV19MqcNUX)
+ - Conectors (Memory, DB, etc.)
+- Logging (Winston)
+- Documentation
 
-## Assaultjs
+
+## 8. Assaultjs
 - Pentesting and exploiting stuff in Node
  - **Community**
  - Site: https://assaultjs.github.io/
