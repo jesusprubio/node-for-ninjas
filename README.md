@@ -32,6 +32,7 @@ We think it's the better way to contribute to make the Node community still more
 - [NPM](https://www.npmjs.com/): **126.258 packages** (at 17/02/2015)
 - **Community driven**
  - [io.js](https://iojs.org/en/index.html) vs. [Node.js®](http://nodejs.org/)
+ - Reconciliation?: https://github.com/iojs/io.js/issues/978#issuecomment-76328274
 
 ### Sharpen your knife
 - Must:
@@ -43,13 +44,13 @@ We think it's the better way to contribute to make the Node community still more
  - [Ryan Dahl: Original Node.js presentation](https://www.youtube.com/watch?v=ztspvPYybIY)
  - [Mixu's Node book](http://book.mixu.net/node/)
  - [The Node Way](http://thenodeway.io/)
+ - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
  - [Eloquent JavaScript](http://eloquentjavascript.net/)
  - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/)
  - [Learn JavaScript Essentials](https://medium.com/javascript-scene/learn-javascript-b631a4af11f2)
- - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
 
 
-## 2. Some fun
+## 2. Useful libraries
 - [How "require" works](http://thenodeway.io/posts/how-require-actually-works/)
 - [Error-first callback](http://thenodeway.io/posts/understanding-error-first-callbacks/): CPS
 - Those ones which we think to be the best option
@@ -63,6 +64,7 @@ We think it's the better way to contribute to make the Node community still more
 - External IP
 - Geolocate
 - Wifi scanning
+- [Web banner grabbing](examples/modules/httpScan.js)
 - DNS resolve (dns-axfr)
 - DNS reverse
 - Host/Port scanning (node-portscanner)
@@ -70,54 +72,23 @@ We think it's the better way to contribute to make the Node community still more
 - DNS brute-force (Subquest)
 - [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
 - [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
- - API
- - Exploits
- - Stream
- - Popular (RSS)
 - [SIP ping](examples/modules/sip/sipPing.js)
 - [SIP authentication](examples/modules/sip/sipAuthentication.js)
-- MongoDB authentication
-- HTTP authentication
-- Fuzzing
+- [MongoDB authentication](examples/modules/mongolAuth.js)
+- [MySQL authentication](examples/modules/mysqlAuth.js)
+- [HTTP authentication](examples/modules/httpAuth.js)
+- [Capturing packets]
+- [Fuzzing]
  - Faker
  - Surku
-
-
-## 3. Let's write something
-
-### Examples
-- Sockets
- - [UDP](examples/modules/udp.js)
- - [TCP](examples/modules/tcp.js)
-  - IPv6
- - [TLS](examples/modules/tls.js)
- - [WS(S)](examples/modules/ws.js)
- - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only
-- Web banner grabbing
- - HTTP core
- - Request.js
-- Capturing packets
-- Metasploit (msfnode)
+- [Sockets](examples/modules/sockets)
+ - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
+- Metasploit ([msfnode](https://github.com/eviltik/msfnode))
+ - Last commit 10 Jun 2013! :(
 - Radare (radare2-bindings)
 
 
-## 4. A good NPM module
-- package.json
-- Patterns:
- - [Singleton](http://thenodeway.io/posts/designing-singletons/)
- - [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
-- Node inspector
-- Grunt :) vs. Gulp (streams)
-- grunt-time
-- JSHint+JSCS
-- Retire.js
-- time?
-
-### Example
- - Exploitsearch
-
-
-## 5. P0wning the asynchrony
+## 3. P0wning the asynchrony
 - for + maxSockets
 - [Async](https://github.com/caolan/async)
  - Streams: [Highland](http://highlandjs.org/)
@@ -135,11 +106,27 @@ We think it's the better way to contribute to make the Node community still more
 - Continuous pentesting
 
 
-## 6. Performance
+## 4. Performance
 TODO
 
 
-## 7. Finishing touches
+## 5. A good NPM module
+- package.json
+- Patterns:
+ - [Singleton](http://thenodeway.io/posts/designing-singletons/)
+ - [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
+- Node inspector
+- Grunt :) vs. Gulp (streams)
+- grunt-time
+- JSHint+JSCS
+- Retire.js
+- time?
+
+### Example
+ - Exploitsearch
+
+
+## 6. Finishing touches
 
 ### Examples
 - Cli
@@ -153,7 +140,7 @@ TODO
 - Documentation
 
 
-## 8. Assaultjs
+## 7. Assaultjs
 - Pentesting and exploiting stuff in Node
  - **Community**
  - Site: https://assaultjs.github.io/

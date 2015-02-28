@@ -23,7 +23,10 @@
   },
   "license": "GPLv3",
   "dependencies": {
+    "mongodb": "^1.4.32",
+    "mysql": "^2.5.5",
     "portfinder": "^0.4.0",
+    "request": "^2.53.0",
     "sip-fake-stack": "git+https://github.com/jesusprubio/sip-fake-stack.git",
     "websocket": "^1.0.17"
   },
