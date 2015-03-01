@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -25,7 +27,6 @@
 // From devs: There is no real benefit to using this project to just to
 // write out a pcap file, just use tcpdump or wireshark
 
-'use strict';
 
 var pcap = require('pcap'),
 

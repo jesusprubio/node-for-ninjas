@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -19,7 +21,6 @@
 
 // https://github.com/jesusprubio/sip-fake-stack
 
-'use strict';
 
 var SipStack = require('sip-fake-stack'),
 

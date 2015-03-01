@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -20,7 +22,6 @@
 // This example sends a message "to himslef" through UDP (Server and client)
 // http://nodejs.org/api/dgram.html
 
-'use strict';
 
 var dgram = require('dgram'),
     socket = dgram.createSocket('udp4'),

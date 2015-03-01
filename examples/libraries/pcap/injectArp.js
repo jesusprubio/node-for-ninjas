@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 'use strict';
 
 /*
@@ -46,9 +47,10 @@ var pcap = require('pcap'),
 console.log('Sending ARP request ...');
 session.inject(arpRequest);
 
-// Just in case (no callbacks)
+// Recommended by the core devs
 // Once the current event loop turn runs to completion, call the callback.
 // This is not a simple alias to setTimeout(fn, 0), it's much more efficient.
 // It runs before any additional I/O events (including timers) fire in
 // subsequent ticks of the event loop
+// http://nodejs.org/api/process.html
 process.nextTick(process.exit(0));

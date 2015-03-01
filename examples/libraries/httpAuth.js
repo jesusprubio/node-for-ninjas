@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -22,7 +24,6 @@
 
 // Does not work with Node v0.12.x!! (they're working on it)
 
-'use strict';
 
 var request = require('request'),
 

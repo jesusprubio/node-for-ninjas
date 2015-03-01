@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -32,7 +34,6 @@
 
 // Check the differences with  and without TLS
 
-'use strict';
 
 var tls = require('tls'),
 //    fs = require('fs'),

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -23,7 +25,6 @@
 // To test this we can use the echo server included in this example:
 // https://www.websocket.org/echo.html
 
-'use strict';
 
 var WebSocketClient  = require('websocket').client,
 

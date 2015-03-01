@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -19,7 +21,6 @@
 
 // http://nodejs.org/api/http.html
 
-'use strict';
 
 var http = require('http');
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /*
     Copyright Jesus Perez <jesusprubio gmail com>
 
@@ -21,7 +23,6 @@
 // (Server and client)
 // http://nodejs.org/api/net.html
 
-'use strict';
 
 var net = require('net'),
     portfinder = require('portfinder'),

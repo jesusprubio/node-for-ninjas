@@ -19,35 +19,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// https://github.com/felixge/node-mysql
+// Simple example
+// https://github.com/attekett/Surku
 
 
-var mysql = require('mysql'),
+var Surku = require('surku'),
 
-    TIMEOUT = 5000,
-    CFG = {
-        host: '127.0.0.1',
-        user: 'admin',
-        password: 'admin',
-        connectTimeout: TIMEOUT
-        // Only when secure
-//        ssl: { rejectUnauthorized: false }
-    },
+    TO_MUTATE = 'Hi world! :)',
 
-    conn;
+    fuzzer = new Surku(),
+    i;
 
-conn = mysql.createConnection(CFG);
-conn.connect(function (err, data) {
-    conn.destroy();
-    if (err) {
-        console.log('Error:');
-        console.log(err);
+for (i = 0; i <= 2; i += 1) {
+    console.log(fuzzer.generateTestCase(TO_MUTATE));
+    console.log('\n\n');
+}
 
-        process.exit(1);
-    } else {
-        console.log('Result:');
-        console.log(data);
-
-        process.exit(0);
-    }
-});
+process.exit(0);

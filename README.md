@@ -79,8 +79,6 @@ We think it's the better way to contribute to make the Node community still more
 - [HTTP authentication](examples/modules/httpAuth.js)
 - [Pcap](examples/modules/pcap)
 - [Fuzzing](examples/modules/fuzzing)
- - Faker
- - Surku
 - [Sockets](examples/modules/sockets)
  - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
@@ -100,17 +98,12 @@ We think it's the better way to contribute to make the Node community still more
 - TFTP brute-force
 - Scanner
  - Arrays and objects powers
- - Complexity kills, careful -> Lazy evaluation (Underscore vs. Lodash vs. Lazy)
+ - Complexity kills! -> Lazy evaluation (Underscore vs. Lodash vs. Lazy)
 - Brute-forcer
 - Fuzzer
 - Continuous pentesting
 
-
-## 4. Performance
-TODO
-
-
-## 5. A good NPM module
+## 4. A good NPM module
 - package.json
 - Patterns:
  - [Singleton](http://thenodeway.io/posts/designing-singletons/)
@@ -125,6 +118,8 @@ TODO
 ### Example
  - Exploitsearch
 
+## 5. Performance
+TODO
 
 ## 6. Finishing touches
 
@@ -138,7 +133,6 @@ TODO
  - Conectors (Memory, DB, etc.)
 - Logging (Winston)
 - Documentation
-
 
 ## 7. Assaultjs
 - Pentesting and exploiting stuff in Node
