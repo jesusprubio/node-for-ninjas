@@ -19,8 +19,6 @@
 
 // http://nodejs.org/api/http.html
 
-// Does not work with Node v0.12.x!! (they're working on it)
-
 'use strict';
 
 var http = require('http');

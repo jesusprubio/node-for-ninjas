@@ -77,8 +77,8 @@ We think it's the better way to contribute to make the Node community still more
 - [MongoDB authentication](examples/modules/mongolAuth.js)
 - [MySQL authentication](examples/modules/mysqlAuth.js)
 - [HTTP authentication](examples/modules/httpAuth.js)
-- [Capturing packets]
-- [Fuzzing]
+- [Pcap](examples/modules/pcap)
+- [Fuzzing](examples/modules/fuzzing)
  - Faker
  - Surku
 - [Sockets](examples/modules/sockets)
