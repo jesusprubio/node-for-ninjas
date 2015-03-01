@@ -19,6 +19,8 @@
 
 
 module.exports = function (grunt) {
+    require('time-grunt')(grunt);
+
     var srcs =  ['Gruntfile.js', 'examples/**/*.js'];
 
     // Load all Grunt tasks at once

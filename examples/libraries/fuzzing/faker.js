@@ -59,6 +59,4 @@ console.log('Phone number: ' + faker.phone.phoneNumber());
 //console.log('Card:');
 //console.log(faker.helpers.createCard());
 
-
-
 process.exit(0);

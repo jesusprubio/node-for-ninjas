@@ -72,8 +72,8 @@ We think it's the better way to contribute to make the Node community still more
 - DNS brute-force (Subquest)
 - [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
 - [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
-- [SIP ping](examples/modules/sip/sipPing.js)
-- [SIP authentication](examples/modules/sip/sipAuthentication.js)
+- [SIP ping](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/request.js)
+- [SIP authentication](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/authenticate.js)
 - [MongoDB authentication](examples/modules/mongolAuth.js)
 - [MySQL authentication](examples/modules/mysqlAuth.js)
 - [HTTP authentication](examples/modules/httpAuth.js)
@@ -104,16 +104,21 @@ We think it's the better way to contribute to make the Node community still more
 - Continuous pentesting
 
 ## 4. A good NPM module
-- package.json
+- [package.json](package.json)
 - Patterns:
  - [Singleton](http://thenodeway.io/posts/designing-singletons/)
  - [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
-- Node inspector
-- Grunt :) vs. Gulp (streams)
-- grunt-time
-- JSHint+JSCS
-- Retire.js
-- time?
+- [JSHint](http://jshint.com/docs/options/) + [JSCS](http://jscs.info/rules.html)
+ - https://github.com/gruntjs/grunt-contrib-jshint#reporter
+ - https://github.com/gonsfx/gulp-jscs-stylish
+- [Grunt](http://gruntjs.com/) :) vs. [Gulp](http://gulpjs.com/) (streams)
+ - [time-grunt](https://github.com/sindresorhus/time-grunt)
+- [Retire.js](https://github.com/bekk/retire.js)
+ - [grunt-retire](https://github.com/bekk/grunt-retire)
+- [time-require](https://github.com/jaguard/time-require)
+- Debugging: Node-inspector (external to the package)
+ - Install: `npm install -g node-inspector`
+ - Use: `node-debug examples/use.js`
 
 ### Example
  - Exploitsearch
