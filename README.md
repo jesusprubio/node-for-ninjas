@@ -93,16 +93,18 @@ for + maxSockets, valid for servers but:
  - In general, not for this kind of tools (see httpDoS).
  - Node doesn't provide nothing similar for regular sockets.
 - Options:
- - Manual implementation: https://gist.github.com/jpenalbae/46782408bebe8e61eb32 ([http.request](http://nodejs.org/api/http.html#http_http_request_options_callback))
+ - Manual implementation (pure event oriented, make it only with much love :):
+  - See the fuzzer example
+  - A web path brute-forcer (by @jpenalbae): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
  - [Async](https://github.com/caolan/async), new approach (also caloan): [Highland](http://highlandjs.org/) (streams)
 
 ### Examples
 - [HTTP DoS](examples/asynchrony/httpDoS.js)
-- [Web path brute-force](examples/asynchrony/httpBrutePath.js))
+- [Fuzzer](examples/asynchrony/fuzzer.js)
+- [Web path brute-force](examples/asynchrony/httpBrutePath.js)
 - Slow attacks
 - Host/port scanner
 - Credentials brute-forcer
-- Fuzzer
 - Continuous pentesting
 
 ## 4. A good NPM module
@@ -133,6 +135,7 @@ TODO
 ### Examples
 - Path references
 - Cli
+ - Colors
  - Commander: Command line
  - Celeri: Command line and interactive
  - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
