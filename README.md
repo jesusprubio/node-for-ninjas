@@ -64,22 +64,24 @@ We think it's the better way to contribute to make the Node community still more
 - External IP
 - Geolocate
 - Wifi scanning
-- [Web banner grabbing](examples/modules/httpScan.js)
+- [Web banner grabbing](examples/libraries/httpScan.js)
 - DNS resolve (dns-axfr)
 - DNS reverse
-- Host/Port scanning (node-portscanner)
-- Speeding up Nmap (libnmap - http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
+- Host/Port scanning
+ - node-portscanner
+ - Evilscan
+ - Speeding up Nmap (libnmap - http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
 - DNS brute-force (Subquest)
 - [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
 - [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 - [SIP ping](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/request.js)
 - [SIP authentication](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/authenticate.js)
-- [MongoDB authentication](examples/modules/mongolAuth.js)
-- [MySQL authentication](examples/modules/mysqlAuth.js)
-- [HTTP authentication](examples/modules/httpAuth.js)
-- [Pcap](examples/modules/pcap)
-- [Fuzzing](examples/modules/fuzzing)
-- [Sockets](examples/modules/sockets)
+- [MongoDB authentication](examples/libraries/mongolAuth.js)
+- [MySQL authentication](examples/libraries/mysqlAuth.js)
+- [HTTP authentication](examples/libraries/httpAuth.js)
+- [Pcap](examples/libraries/pcap)
+- [Fuzzing](examples/libraries/fuzzing)
+- [Sockets](examples/libraries/sockets)
  - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
  - Last commit 10 Jun 2013! :(
@@ -87,19 +89,19 @@ We think it's the better way to contribute to make the Node community still more
 
 
 ## 3. P0wning the asynchrony
-- for + maxSockets
-- [Async](https://github.com/caolan/async)
- - Streams: [Highland](http://highlandjs.org/)
+for + maxSockets, valid for servers but:
+ - In general, not for this kind of tools (see httpDoS).
+ - Node doesn't provide nothing similar for regular sockets.
+- Options:
+ - Manual implementation: https://gist.github.com/jpenalbae/46782408bebe8e61eb32 ([http.request](http://nodejs.org/api/http.html#http_http_request_options_callback))
+ - [Async](https://github.com/caolan/async), new approach (also caloan): [Highland](http://highlandjs.org/) (streams)
 
 ### Examples
-- HTTP DoS
-- Web path brute-force
-- TCP DoS
-- TFTP brute-force
-- Scanner
- - Arrays and objects powers
- - Complexity kills! -> Lazy evaluation (Underscore vs. Lodash vs. Lazy)
-- Brute-forcer
+- [HTTP DoS](examples/asynchrony/httpDoS.js)
+- [Web path brute-force](examples/asynchrony/httpBrutePath.js))
+- Slow attacks
+- Host/port scanner
+- Credentials brute-forcer
 - Fuzzer
 - Continuous pentesting
 
@@ -121,7 +123,7 @@ We think it's the better way to contribute to make the Node community still more
  - Use: `node-debug examples/use.js`
 
 ### Example
- - Exploitsearch
+ - [Exploitsearch](https://github.com/jesusprubio/node-exploitsearch-client)
 
 ## 5. Performance
 TODO
@@ -129,10 +131,11 @@ TODO
 ## 6. Finishing touches
 
 ### Examples
+- Path references
 - Cli
- - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
  - Commander: Command line
  - Celeri: Command line and interactive
+ - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
 - Reporting: JSON (Bluebox-ng report)
 - Database: [Mongoose](https://www.youtube.com/playlist?list=PL5wy-Ijp__A2-ZSePUHXPMwpV19MqcNUX)
  - Conectors (Memory, DB, etc.)

@@ -55,7 +55,7 @@ var tls = require('tls'),
 //        localAddress: '192.168.1.3',
 //        localPort: 9999,
 //        family: 6
-        rejectUnauthorized: false,
+        rejectUnauthorized: false, // allow bad certs
         // https://www.openssl.org/docs/ssl/ssl.html#DEALING_WITH_PROTOCOL_METHODS
         secureProtocol: 'TLSv1_method'
 //        secureProtocol: 'SSLv3_method'

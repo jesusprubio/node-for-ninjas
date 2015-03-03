@@ -20,7 +20,7 @@
 */
 
 // https://github.com/request/request
-// - easier: TLS, redirection, etc.
+// - easier: TLS/SSL, redirection, OAuth, etc.
 
 // Does not work with Node v0.12.x!! (they're working on it)
 
@@ -43,14 +43,14 @@ var request = require('request'),
             '31.0.1650.63 Safari/537.36'
     },
     CFG = {
-        uri       : 'http://127.0.0.1',
-//        uri       : 'http://127.0.0.1:8080',
-        method    : 'GET',
-        headers   : HEADERS,
-        json      : false,
-        timeout   : TIMEOUT,
-        strictSSL : false,
-        auth      : AUTH_CFG
+        uri: 'http://127.0.0.1',
+//        uri: 'http://127.0.0.1:8080',
+        method: 'GET',
+        headers: HEADERS,
+        json: false, // auto-json support
+        timeout: TIMEOUT,
+        strictSSL: false, // auto-ssl, allow bad certs
+        auth: AUTH_CFG
     };
 
 request.get(CFG, function (err, res, body) {

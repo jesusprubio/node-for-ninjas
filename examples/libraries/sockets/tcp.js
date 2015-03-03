@@ -57,7 +57,7 @@ server = net.createServer(
         // The socket won't automatically send a FIN packet when the other end
         // of the socket sends a FIN packetThe socket becomes non-readable, but
         // still writable. You should call the end() method explicitly.
-        // - Useful to flood
+        // - Useful to flood/scan
         allowHalfOpen: true
         // No data will be read from the socket until call "resume()"
         // It allows to pass the socket between process

@@ -17,7 +17,7 @@
     "tool",
     "Pentesting",
     "Exploiting",
-    "Fuzzing",
+    "Fuzzing"
   ],
   "homepage": "https://github.com/jesusprubio/node-for-pentesters",
   "bugs": {
@@ -25,7 +25,9 @@
   },
   "license": "GPLv3",
   "dependencies": {
+    "async": "^0.9.0",
     "faker": "^2.1.2",
+    "lodash": "^3.3.1",
     "mongodb": "^1.4.32",
     "mysql": "^2.5.5",
     "pcap": "^2.0.1",

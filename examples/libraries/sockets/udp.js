@@ -24,9 +24,6 @@
 
 
 var dgram = require('dgram'),
-    socket = dgram.createSocket('udp4'),
-    // IPv6
-//    socket = dgram.createSocket('udp6'),
     portfinder = require('portfinder'),
 
     // PROBLEM: How do you guarantee that it's free?
@@ -37,6 +34,9 @@ var dgram = require('dgram'),
     MSG = new Buffer('Hi world! :)'),
     TIMEOUT = 5000,
 
+    socket = dgram.createSocket('udp4'),
+    // IPv6
+//    socket = dgram.createSocket('udp6'),
     // The client don't support any close function, so we need this callback
     // to emulate it. This var is to control of our timeout error
     received = false;
@@ -106,7 +106,7 @@ portfinder.getPort(function (err, port) {
 
     // It could be in a different file but we're reusing the socket
     // and including here for simplicity
-    socket.send(MSG, 0, MSG.length, port, "localhost", function (err) {
+    socket.send(MSG, 0, MSG.length, port, 'localhost', function (err) {
         // To test the timeout an wasy way it to target an online
         // (non compatible) host/port (ie: The "http-server" module)
         // https://github.com/nodeapps/http-server (default setup)
