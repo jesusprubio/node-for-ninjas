@@ -25,7 +25,16 @@
 var r2pipe = require('r2pipe');
 
 function doSomeStuff(r2) {
-    r2.cmd('iS', function (output) {
+    // sections
+//    var r2Command = 'iS';
+    // writable sections
+//    var r2Command = 'iS~w';
+    // Linked libraries
+    var r2Command = 'il';
+    // Entry points
+//    var r2Command = 'ie';
+
+    r2.cmd(r2Command, function (output) {
         console.log (output);
         process.exit(0);
     });
