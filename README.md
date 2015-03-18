@@ -64,7 +64,7 @@ We think it's the better way to contribute to make the Node community still more
 - [Traceroute](examples/libraries/traceroute.js)
 - [External IP](examples/libraries/externalIp.js)
 - Geolocate
-- Wifi scanning
+- [Wifi scanning](examples/libraries/wifiScan.js)
 - [Web banner grabbing](examples/libraries/httpScan.js)
 - DNS resolve
 - DNS reverse

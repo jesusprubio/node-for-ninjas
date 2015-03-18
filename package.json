@@ -34,6 +34,7 @@
     "mysql": "^2.5.5",
     "node-libnmap": "^0.1.12",
     "node-whois": "^2.1.0",
+    "node-wifiscanner": "^0.2.0",
     "pcap": "^2.0.1",
     "ping": "^0.1.9",
     "portfinder": "^0.4.0",
