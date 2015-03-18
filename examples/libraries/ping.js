@@ -21,13 +21,15 @@
 
 
 var ping = require('ping'),
-    host = '8.8.8.8';
 
-ping.sys.probe(host, function (isAlive) {
+    HOST = '8.8.8.8';
+
+ping.sys.probe(HOST, function (isAlive) {
     if (isAlive) {
-        console.log(host+' is alive!');
+        console.log(HOST + ' is alive!');
+    } else {
+        console.log(HOST + ' is down.');
     }
-    else {
-        console.log(host+' is down.');
-    }
+
+    process.exit(0);
 });
