@@ -58,11 +58,11 @@ We think it's the better way to contribute to make the Node community still more
 - Dependencies installed globally for now (ie: `npm i -g ping`)
 
 ### Examples
-- Ping
-- Ping TCP
-- Whois
-- Traceroute
-- External IP
+- [Ping](examples/libraries/ping.js)
+- [Ping TCP](examples/libraries/pingTcp.js)
+- [Whois](examples/libraries/whois.js)
+- [Traceroute](examples/libraries/traceroute.js)
+- [External IP](examples/libraries/externalIp.js)
 - Geolocate
 - Wifi scanning
 - [Web banner grabbing](examples/libraries/httpScan.js)
