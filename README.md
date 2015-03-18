@@ -148,12 +148,11 @@ TODO
 - Logging (Winston)
 - Documentation
 
-## 7. Assaultjs
-- Pentesting and exploiting stuff in Node
+## 7. Bluebox-ng
+- Demo [video](https://www.youtube.com/watch?v=M-6k4Md3qEQ)
+ - [Design](https://github.com/jesusprubio/bluebox-ng)
+- Assaultjs: Pentesting and exploiting stuff in Node
  - **Community**
  - Site: https://assaultjs.github.io/
  - IRC: #assaultjs
- - Twitter: @assaultjs
-- **Framework**
- - Demo still not available, by the way the [Bluebox-ng one](https://www.youtube.com/watch?v=M-6k4Md3qEQ) is similar for now
- - [Design](https://github.com/assaultjs/assaultjs)
+ - **Framework**
