@@ -63,7 +63,7 @@ We think it's the better way to contribute to make the Node community still more
 - [Whois](examples/libraries/whois.js)
 - [Traceroute](examples/libraries/traceroute.js)
 - [External IP](examples/libraries/externalIp.js)
-- Geolocate
+- [Geolocate](examples/libraries/geoLocation.js)
 - [Wifi scanning](examples/libraries/wifiScan.js)
 - [Web banner grabbing](examples/libraries/httpScan.js)
 - DNS resolve

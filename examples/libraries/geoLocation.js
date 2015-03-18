@@ -20,9 +20,11 @@
 */
 
 
-var scanner = require('node-wifiscanner');
+var geoip = require('node-freegeoip'),
 
-scanner.scan(function (err, res) {
+    HOST = '8.8.8.8';
+
+geoip.getLocation(HOST, function (err, res) {
     if (err) {
         console.log(err);
 

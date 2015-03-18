@@ -32,6 +32,7 @@
     "moira": "^1.1.2",
     "mongodb": "^1.4.32",
     "mysql": "^2.5.5",
+    "node-freegeoip": "0.0.1",
     "node-libnmap": "^0.1.12",
     "node-whois": "^2.1.0",
     "node-wifiscanner": "^0.2.0",
