@@ -64,7 +64,7 @@ socket.on('message', function (msg, rinfo) {
 
     // Not needed, we're exiting right now, but in real apps be careful!
 //    socket.close();
-    debugger; // used in the chapter 4
+//     debugger; // used in the chapter 4
     process.exit(0);
 });
 
