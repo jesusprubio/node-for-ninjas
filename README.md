@@ -81,14 +81,14 @@ We think it's the better way to contribute to make the Node community still more
 - [MongoDB authentication](examples/libraries/mongolAuth.js)
 - [MySQL authentication](examples/libraries/mysqlAuth.js)
 - [HTTP authentication](examples/libraries/httpAuth.js)
-- [Pcap](examples/libraries/pcap)
-- [Fuzzing](examples/libraries/fuzzing)
-- [Sockets](examples/libraries/sockets)
+- [Pcap](examples/libraries/pcap.js)
+- [Fuzzing](examples/libraries/fuzzing.js)
+- [Sockets](examples/libraries/sockets.js)
  - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
  - Last commit 10 Jun 2013! :(
 - Radare ([r2pipe](https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs) module)
-
+- [System command](examples/libraries/command.js)
 
 ## 3. P0wning the asynchrony
 for + maxSockets, valid for servers but:

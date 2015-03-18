@@ -32,7 +32,9 @@
     "mysql": "^2.5.5",
     "pcap": "^2.0.1",
     "portfinder": "^0.4.0",
+    "r2pipe": "^0.1.1",
     "request": "^2.53.0",
+    "shelljs": "^0.4.0",
     "sip-fake-stack": "git+https://github.com/jesusprubio/sip-fake-stack.git",
     "surku": "^0.1.11",
     "websocket": "^1.0.17"
