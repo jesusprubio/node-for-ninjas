@@ -66,8 +66,9 @@ We think it's the better way to contribute to make the Node community still more
 - Geolocate
 - Wifi scanning
 - [Web banner grabbing](examples/libraries/httpScan.js)
-- DNS resolve (dns-axfr)
+- DNS resolve
 - DNS reverse
+- DNS zone transfer
 - Host/Port scanning
  - node-portscanner
  - Evilscan
