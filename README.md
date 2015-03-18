@@ -1,4 +1,4 @@
-# Node for pentesters
+# Node for ninjas
 A handbook for security experts who like JavaScript and javascripters who like (in)security.
 >Don't Reinvent The Wheel, Unless You Plan on Learning More About Wheels
 (by [@codinghorror](http://blog.codinghorror.com/dont-reinvent-the-wheel-unless-you-plan-on-learning-more-about-wheels/))
@@ -15,8 +15,7 @@ During this time we met with people doing the same and we started a [community](
 We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy the Node community ;).
 
 ### Authors
-- [@jesusprubio](https://twitter.com/jesusprubio)
-- [@sergiogr](https://twitter.com/sergiogr)
+- https://github.com/jesusprubio/node-for-pentesters/graphs/contributors
 
 ### License & Copyright
 - Code: [<img src="https://fsfe.org/graphics/gplv3-logo-red.png" height="40" alt="GPLv3">](https://www.gnu.org/copyleft/gpl.html)
@@ -87,7 +86,7 @@ We think it's the better way to contribute to make the Node community still more
  - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
  - Last commit 10 Jun 2013! :(
-- Radare (radare2-bindings)
+- Radare ([r2pipe](https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs) module)
 
 
 ## 3. P0wning the asynchrony
@@ -98,7 +97,9 @@ for + maxSockets, valid for servers but:
  - Manual implementation (pure event oriented, make it only with much love :):
   - See the fuzzer example
   - A web path brute-forcer (by @jpenalbae): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
- - [Async](https://github.com/caolan/async), new approach (also caloan): [Highland](http://highlandjs.org/) (streams)
+ - [Async](https://github.com/caolan/async)
+  - Mew approach (also caloan): [Highland](http://highlandjs.org/) (streams)
+ - Promises, Generators, ES7 async, etc. : http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
 
 ### Examples
 - [HTTP DoS](examples/asynchrony/httpDoS.js)
