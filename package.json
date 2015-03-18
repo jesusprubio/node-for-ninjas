@@ -29,6 +29,7 @@
     "evilscan": "^1.0.0",
     "faker": "^2.1.2",
     "lodash": "^3.3.1",
+    "moira": "^1.1.2",
     "mongodb": "^1.4.32",
     "mysql": "^2.5.5",
     "node-libnmap": "^0.1.12",

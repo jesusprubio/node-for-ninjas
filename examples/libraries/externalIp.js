@@ -20,17 +20,17 @@
 */
 
 
-var traceroute = require('traceroute'),
+var moira = require('moira');
 
-    HOST = '8.8.8.8';
-
-traceroute.trace(HOST, function (err, res) {
+moira.getIP(function (err, ip, service) {
     if (err) {
         console.log(err);
 
         process.exit(1);
+
     } else {
-        console.log(res);
+        console.log(ip);
+        console.log(service);
 
         process.exit(0);
     }
