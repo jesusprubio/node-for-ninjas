@@ -139,6 +139,7 @@ TODO
 - Cli
  - Colors
  - Commander: Command line
+ - https://github.com/SBoudrias/Inquirer.js
  - Celeri: Command line and interactive
  - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
 - Reporting: JSON (Bluebox-ng report)
