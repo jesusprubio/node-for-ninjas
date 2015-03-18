@@ -42,6 +42,7 @@
     "sip-fake-stack": "git+https://github.com/jesusprubio/sip-fake-stack.git",
     "surku": "^0.1.11",
     "tcp-ping": "^0.1.1",
+    "traceroute": "0.0.3",
     "websocket": "^1.0.17"
   },
   "devDependencies": {
