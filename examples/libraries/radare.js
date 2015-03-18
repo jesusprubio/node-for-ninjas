@@ -36,6 +36,7 @@ function doSomeStuff(r2) {
 
     r2.cmd(r2Command, function (output) {
         console.log (output);
+
         process.exit(0);
     });
 }
