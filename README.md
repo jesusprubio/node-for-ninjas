@@ -29,7 +29,7 @@ We think it's the better way to contribute to make the Node community still more
  - Asyncronous I/O -> **Fast** & Simple (vs. multithreading) (ie: scanner, brute-forcer, etc.)
  - Single thread -> **High performance**
  - Paypal: "Double number of req/s and reduced response time by 35% or 200 ms"
-- [NPM](https://www.npmjs.com/): **126.258 packages** (at 17/02/2015)
+- [NPM](https://www.npmjs.com/): **133.297 packages** (at 18/03/2015)
 - **Community driven**
  - [io.js](https://iojs.org/en/index.html) vs. [Node.js®](http://nodejs.org/)
  - Reconciliation?: https://github.com/iojs/io.js/issues/978#issuecomment-76328274
@@ -46,15 +46,17 @@ We think it's the better way to contribute to make the Node community still more
  - [The Node Way](http://thenodeway.io/)
  - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
  - [Eloquent JavaScript](http://eloquentjavascript.net/)
- - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/)
+ - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+ - [Learning JavaScript Design Patterns](addyosmani.com/resources/essentialjsdesignpatterns/book)
  - [Learn JavaScript Essentials](https://medium.com/javascript-scene/learn-javascript-b631a4af11f2)
 
 
 ## 2. Useful libraries
 - [How "require" works](http://thenodeway.io/posts/how-require-actually-works/)
 - [Error-first callback](http://thenodeway.io/posts/understanding-error-first-callbacks/): CPS
+ - ie: https://github.com/jesusprubio/bluebox-ng/blob/master/modules/geolocation.js
 - Those ones which we think to be the best option
-- Dependencies installed globally for now (ie: npm i -g ping)
+- Dependencies installed globally for now (ie: `npm i -g ping`)
 
 ### Examples
 - Ping
@@ -100,7 +102,7 @@ for + maxSockets, valid for servers but:
 
 ### Examples
 - [HTTP DoS](examples/asynchrony/httpDoS.js)
-- [Fuzzer](examples/asynchrony/fuzzer.js)
+- [Fuzzer](examples/asynchrony/dumbFuzz.js)
 - [Web path brute-force](examples/asynchrony/httpBrutePath.js)
 - Slow attacks
 - Host/port scanner
@@ -122,7 +124,7 @@ for + maxSockets, valid for servers but:
 - [time-require](https://github.com/jaguard/time-require)
 - Debugging: Node-inspector (external to the package)
  - Install: `npm install -g node-inspector`
- - Use: `node-debug examples/use.js`
+ - Use: `node-debug examples/libraries/sockets/udp.js`
 
 ### Example
  - [Exploitsearch](https://github.com/jesusprubio/node-exploitsearch-client)

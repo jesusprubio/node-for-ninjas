@@ -71,7 +71,6 @@ megaSocket.on('error', function (err) {
         console.log('Boom!, last packet sent:');
         console.log(lastSent);
         console.log(err);
-
     }
     // Error is good in this case :)
     process.exit(0);
