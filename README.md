@@ -93,16 +93,13 @@ We think it's the better way to contribute to make the Node community still more
 
 
 ## 3. P0wning the asynchrony
-for + maxSockets, valid for servers but:
- - In general, not for this kind of tools (see httpDoS).
- - Node doesn't provide nothing similar for regular sockets.
-- Options:
- - Manual implementation (pure event oriented, make it only with much love :):
-  - See the fuzzer example
-  - A web path brute-forcer (by @jpenalbae): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
- - [Async](https://github.com/caolan/async)
+"for + maxSockets", valid for servers but, in general, not for this kind of tools (see "httpDoS"). Node doesn't provide anything similar for regular sockets, options:
+- Manual implementation (pure event oriented, make it only with much love :):
+ - See the fuzzer example
+ - A web path brute-forcer (by @jpenalbae): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
+- [Async](https://github.com/caolan/async)
   - Mew approach (also caloan): [Highland](http://highlandjs.org/) (streams)
- - Promises, Generators, ES7 async, etc. : http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
+- Promises, Generators, ES7 async, etc. : http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
 
 ### Examples
 - [HTTP DoS](examples/asynchrony/httpDoS.js)
