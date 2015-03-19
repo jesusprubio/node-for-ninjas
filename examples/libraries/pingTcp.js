@@ -19,6 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// https://github.com/wesolyromek/tcp-ping
 
 var ping = require('tcp-ping'),
 

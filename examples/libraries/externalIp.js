@@ -19,16 +19,19 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// https://github.com/mjhasbach/MOIRA
 
 var moira = require('moira');
 
 moira.getIP(function (err, ip, service) {
     if (err) {
+        console.log('ERROR:');
         console.log(err);
 
         process.exit(1);
 
     } else {
+        console.log('Result:');
         console.log(ip);
         console.log(service);
 

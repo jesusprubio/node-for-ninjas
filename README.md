@@ -70,10 +70,9 @@ We think it's the better way to contribute to make the Node community still more
 - DNS reverse
 - DNS zone transfer
 - DNS brute-force (Subquest)
-- Host/Port scanning
- - [Evilscan](examples/libraries/evilscan.js)
- - [Nmap](examples/libraries/nmap.js)
-  - [Speeding up Nmap](http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
+- [Host/Port scanning](examples/libraries/scanning)
+ - Evilscan
+ - Nmap, ["Speeding up Nmap"](http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
 - [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
 - [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 - [SIP ping](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/request.js)

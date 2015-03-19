@@ -20,6 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// https://github.com/mauricesvay/node-wifiscanner
 
 var scanner = require('node-wifiscanner');
 

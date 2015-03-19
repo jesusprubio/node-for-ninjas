@@ -20,6 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// https://github.com/lxfontes/node-freegeoip
 
 var geoip = require('node-freegeoip'),
 
