@@ -4,6 +4,7 @@
 
 /*
     Copyright Sergio Garcia <s3rgio.gr gmail com>
+                     Jesus Perez <jesusprubio gmail com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,16 +21,11 @@
 */
 
 
-var ping = require('tcp-ping'),
+var geoip = require('node-freegeoip'),
 
-    CFG = {
-        address: '46.28.246.123',
-        port: 80,
-        timeout: 5000,
-        attempts: 3
-    };
+    HOST = '8.8.8.8';
 
-ping.ping(CFG, function (err, res) {
+geoip.getLocation(HOST, function (err, res) {
     if (err) {
         console.log('ERROR:');
         console.log(err);

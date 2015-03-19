@@ -20,24 +20,17 @@
 */
 
 
-var ping = require('tcp-ping'),
+var moira = require('moira');
 
-    CFG = {
-        address: '46.28.246.123',
-        port: 80,
-        timeout: 5000,
-        attempts: 3
-    };
-
-ping.ping(CFG, function (err, res) {
+moira.getIP(function (err, ip, service) {
     if (err) {
-        console.log('ERROR:');
         console.log(err);
 
         process.exit(1);
+
     } else {
-        console.log('Result:');
-        console.log(res);
+        console.log(ip);
+        console.log(service);
 
         process.exit(0);
     }

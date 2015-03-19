@@ -37,7 +37,8 @@ function doSomeStuff(r2) {
 //    var r2Command = 'ie';
 
     r2.cmd(r2Command, function (output) {
-        console.log (output);
+        console.log('Output:');
+        console.log(output);
 
         process.exit(0);
     });
