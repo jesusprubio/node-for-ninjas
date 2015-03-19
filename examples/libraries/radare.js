@@ -19,15 +19,17 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// Dep: Radare2: http://www.radare.org
 // https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs
+// r2pipe preffered, reason here: https://github.com/radare/radare2-bindings/tree/master/r2pipe
 
 
 var r2pipe = require('r2pipe');
 
 function doSomeStuff(r2) {
-    // sections
+    // Sections
 //    var r2Command = 'iS';
-    // writable sections
+    // Writable sections
 //    var r2Command = 'iS~w';
     // Linked libraries
     var r2Command = 'il';

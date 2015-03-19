@@ -12,7 +12,7 @@ All we know [JavaScript is taking the world](http://githut.info/), moreover with
 
 During this time we met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn.
 
-We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy the Node community ;).
+We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy this book ;).
 
 ### Authors
 - https://github.com/jesusprubio/node-for-pentesters/graphs/contributors
@@ -87,8 +87,10 @@ We think it's the better way to contribute to make the Node community still more
  - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
  - Last commit 10 Jun 2013! :(
-- Radare ([r2pipe](https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs) module)
+- [Radare](examples/libraries/radare.js) bindings:
+ - [r2pipe](https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs) :) vs. [node-ffi](https://github.com/radare/radare2-bindings/tree/master/node-ffi)
 - [System command](examples/libraries/command.js)
+
 
 ## 3. P0wning the asynchrony
 for + maxSockets, valid for servers but:
@@ -111,6 +113,7 @@ for + maxSockets, valid for servers but:
 - Credentials brute-forcer
 - Continuous pentesting
 
+
 ## 4. A good NPM module
 - [package.json](package.json)
 - Patterns:
@@ -131,8 +134,10 @@ for + maxSockets, valid for servers but:
 ### Example
  - [Exploitsearch](https://github.com/jesusprubio/node-exploitsearch-client)
 
+
 ## 5. Performance
 TODO
+
 
 ## 6. Finishing touches
 
@@ -150,6 +155,7 @@ TODO
 - Logging (Winston)
 - Documentation
 
+
 ## 7. Bluebox-ng
 - Demo [video](https://www.youtube.com/watch?v=M-6k4Md3qEQ)
  - [Design](https://github.com/jesusprubio/bluebox-ng)
@@ -157,4 +163,4 @@ TODO
  - **Community**
  - Site: https://assaultjs.github.io/
  - IRC: #assaultjs
- - **Framework**
+ - **Framework**?

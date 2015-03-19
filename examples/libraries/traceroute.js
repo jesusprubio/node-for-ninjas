@@ -4,6 +4,7 @@
 
 /*
     Copyright Sergio Garcia <s3rgio.gr gmail com>
+              Jesus Perez <jesusprubio gmail com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,10 +27,12 @@ var traceroute = require('traceroute'),
 
 traceroute.trace(HOST, function (err, res) {
     if (err) {
-        console.log(err)
+        console.log('ERROR:');
+        console.log(err);
 
         process.exit(1);
     } else {
+        console.log('Result:');
         console.log(res);
 
         process.exit(0);
