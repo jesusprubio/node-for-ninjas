@@ -2,13 +2,19 @@
   "name": "node-for-ninjas",
   "version": "0.0.0",
   "description": "A handbook for security experts who like JavaScript and javascripters who like (in)security.",
+  "scripts": {
+    "lint": "eslint .",
+    "dep-ok": "depcheck --ignores=compression,cors,loopback-component-explorer,loopback-connector-mongodb,serve-favicon,strong-error-handler,body-parser,helmet",
+    "dep-sec": "nsp check",
+    "dep-old": "ncu",
+  },
   "contributors": [
     "Jesus Perez <@jesusprubio> (http://jesusprubio.name)",
     "Sergio Garcia <@sergiogr>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jesusprubio/node-for-pentesters/node-for-pentesters.git"
+    "url": "https://github.com/jesusprubio/node-for-ninjas/node-for-ninjas.git"
   },
   "keywords": [
     "Node",
@@ -19,24 +25,26 @@
     "Exploiting",
     "Fuzzing"
   ],
-  "homepage": "https://github.com/jesusprubio/node-for-pentesters",
+  "homepage": "https://github.com/jesusprubio/node-for-ninjas",
   "bugs": {
-    "url": "https://github.com/jesusprubio/node-for-pentesters/issues"
+    "url": "https://github.com/jesusprubio/node-for-ninjas/issues"
   },
   "license": "GPLv3",
   "dependencies": {
     "async": "^0.9.0",
+    "connect": "^3.3.5",
     "evilscan": "^1.0.0",
+    "exploitsearch": "^1.0.9",
     "faker": "^2.1.2",
+    "harmon": "^1.3.1",
+    "http-proxy": "^1.11.1",
     "lodash": "^3.3.1",
     "moira": "^1.1.2",
-    "mongodb": "^1.4.32",
     "mysql": "^2.5.5",
     "node-freegeoip": "0.0.1",
     "node-libnmap": "^0.1.12",
     "node-whois": "^2.1.0",
     "node-wifiscanner": "^0.2.0",
-    "pcap": "^2.0.1",
     "ping": "^0.1.9",
     "portfinder": "^0.4.0",
     "r2pipe": "^0.1.1",
@@ -44,22 +52,22 @@
     "shelljs": "^0.4.0",
     "sip-fake-stack": "git+https://github.com/jesusprubio/sip-fake-stack.git",
     "surku": "^0.1.11",
+    "tamper": "^0.1.0",
     "tcp-ping": "^0.1.1",
     "traceroute": "0.0.3",
     "websocket": "^1.0.17"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-jscs": "^1.2.0",
-    "grunt-retire": "^0.3.7",
-    "jscs-stylish": "^0.3.1",
-    "jshint-stylish": "^1.0.0",
-    "load-grunt-tasks": "^3.1.0",
-    "time-grunt": "^1.0.0",
-    "time-require": "^0.1.2"
+    "depcheck": "^0.6.4",
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-json": "^1.2.0",
+    "npm-check-updates": "^2.8.0",
+    "nsp": "^2.1.0"
   },
   "engines": {
-    "node": "0.12.x"
+    "node": ">=7",
+    "npm": ">=3"
   }
 }
