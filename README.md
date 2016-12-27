@@ -5,16 +5,25 @@ A handbook for security experts who like JavaScript and javascripters who like (
 
 
 ## 1. Introduction
-*Work in progress*
+This project is a *work in progress*. For now it only includes the examples I use in my workshops, maybe someday I write the whole text :sweat_smile:. By the way I've already included here (and inside the code), the most important observations.
 
 ### Motivation
 All we know [JavaScript is taking the world](http://githut.info/), moreover with the Node irruption the rules have changed and we can use the same language also in the server side. All kind of servers were written, specially those ones related with the web (ie: [Express](http://expressjs.com/)), and [are being succesfully used in the wild](http://nodejs.org/industry/). Two years ago we were using Node at work so, one day, we also started to use it to write our day to day security stuff.
 
-During this time we met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn.
+During this time I met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn.
 
-We think it's the better way to contribute to make the Node community still more awesome. Security guys are really curious and pragmatic, and most of them already know how to write (and break) JavaScript. So we're pretty sure they're going to enjoy this book ;).
+Finally I think it's the better way to contribute to make the Node community still more awesome.
 
-### Authors
+### Author
+- Jesús Pérez
+ - [@jesusprubio](https://twitter.com/jesusprubio)
+ - jesusprubio gmail com
+ - [http://jesusprubio.name/](http://jesusprubio.name/)
+
+### Contributors
+- Sergio García
+ - [@s3rgiogr](https://twitter.com/s3rgiogr)
+ - s3rgio.gr gmail com
 - https://github.com/jesusprubio/node-for-pentesters/graphs/contributors
 
 ### License & Copyright
@@ -28,22 +37,21 @@ We think it's the better way to contribute to make the Node community still more
  - Asyncronous I/O -> **Fast** & Simple (vs. multithreading) (ie: scanner, brute-forcer, etc.)
  - Single thread -> **High performance**
  - Paypal: "Double number of req/s and reduced response time by 35% or 200 ms"
-- [NPM](https://www.npmjs.com/): **133.297 packages** (at 18/03/2015)
+- [NPM](https://www.npmjs.com/): **151.535 packages** (at 26/05/2015)
 - **Community driven**
  - [io.js](https://iojs.org/en/index.html) vs. [Node.js®](http://nodejs.org/)
- - Reconciliation?: https://github.com/iojs/io.js/issues/978#issuecomment-76328274
+ - Reconciliation?: https://github.com/nodejs/io.js/issues/1664
+ - [Draft Node.js Foundation Technical Governance](https://github.com/joyent/nodejs-advisory-board/pull/30)
 
 ### Sharpen your knife
 - Must:
  - [JavaScript For Cats](http://jsforcats.com/)
  - [The art of Node](https://github.com/maxogden/art-of-node#the-art-of-node)
 - Bonus:
- - [Node.js for Beginners](http://code.tutsplus.com/tutorials/node-js-for-beginners--net-26314)
- - [NodeSchool](http://nodeschool.io/)
  - [Ryan Dahl: Original Node.js presentation](https://www.youtube.com/watch?v=ztspvPYybIY)
- - [Mixu's Node book](http://book.mixu.net/node/)
  - [The Node Way](http://thenodeway.io/)
- - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
+ - [stream-handbook](https://github.com/substack/stream-handbook)
+ - [NodeSchool](http://nodeschool.io/)
  - [Eloquent JavaScript](http://eloquentjavascript.net/)
  - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
  - [Learning JavaScript Design Patterns](addyosmani.com/resources/essentialjsdesignpatterns/book)
@@ -58,56 +66,57 @@ We think it's the better way to contribute to make the Node community still more
 - Dependencies installed globally for now (ie: `npm i -g ping`)
 
 ### Examples
-- [Ping](examples/libraries/ping.js)
-- [Ping TCP](examples/libraries/pingTcp.js)
-- [Whois](examples/libraries/whois.js)
-- [Traceroute](examples/libraries/traceroute.js)
-- [External IP](examples/libraries/externalIp.js)
-- [Geolocate](examples/libraries/geoLocation.js)
-- [Wifi scanning](examples/libraries/wifiScan.js)
-- [Web banner grabbing](examples/libraries/httpScan.js)
+- [Ping](libraries/ping.js)
+- [Ping TCP](libraries/pingTcp.js)
+- [Whois](libraries/whois.js)
+- [Traceroute](libraries/traceroute.js)
+- [External IP](libraries/externalIp.js)
+- [Geolocate](libraries/geoLocation.js)
+- [Wifi scanning](libraries/wifiScan.js)
+- [Web banner grabbing](libraries/httpScan.js)
 - DNS resolve
 - DNS reverse
 - DNS zone transfer
 - DNS brute-force (Subquest)
-- [Host/Port scanning](examples/libraries/scanning)
+- [Host/Port scanning](libraries/scanning)
  - Evilscan
  - Nmap, ["Speeding up Nmap"](http://zurb.com/forrst/posts/Speeding_up_nmap_with_node_js-GpQ)
-- [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/examples/use.js)
+- [Exploit search](https://github.com/jesusprubio/node-exploitsearch-client/blob/master/use.js)
 - [SHODAN](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
-- [SIP ping](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/request.js)
-- [SIP authentication](https://github.com/jesusprubio/sip-fake-stack/blob/master/examples/authenticate.js)
-- [MongoDB authentication](examples/libraries/mongolAuth.js)
-- [MySQL authentication](examples/libraries/mysqlAuth.js)
-- [HTTP authentication](examples/libraries/httpAuth.js)
-- [Pcap](examples/libraries/pcap.js)
-- [Fuzzing](examples/libraries/fuzzing.js)
-- [Sockets](examples/libraries/sockets.js)
- - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed
+- [SIP ping](https://github.com/jesusprubio/sip-fake-stack/blob/master/request.js)
+- [SIP authentication](https://github.com/jesusprubio/sip-fake-stack/blob/master/authenticate.js)
+- [MongoDB authentication](libraries/mongolAuth.js)
+- [MySQL authentication](libraries/mysqlAuth.js)
+- [HTTP authentication](libraries/httpAuth.js)
+- [HTTP proxy](libraries/httpProxy.js)
+- [Pcap](libraries/pcap.js)
+- [Fuzzing](libraries/fuzzing.js)
+- [Sockets](libraries/sockets.js)
+ - [Meta-socket](https://github.com/jesusprubio/sip-fake-stack/blob/master/src/steroidsSocket.js): Client only, the full object exposed.
 - Metasploit ([msfnode](https://github.com/eviltik/msfnode))
  - Last commit 10 Jun 2013! :(
-- [Radare](examples/libraries/radare.js) bindings:
+- [Radare](libraries/radare.js) bindings:
  - [r2pipe](https://github.com/radare/radare2-bindings/tree/master/r2pipe/nodejs) :) vs. [node-ffi](https://github.com/radare/radare2-bindings/tree/master/node-ffi)
-- [System command](examples/libraries/command.js)
+- [System command](libraries/command.js)
 
 
 ## 3. P0wning the asynchrony
-"for + maxSockets", valid for servers but, in general, not for this kind of tools (see "httpDoS"). Node doesn't provide anything similar for regular sockets, options:
+"for + maxSockets", valid for servers but, in general, not for this kind of tools (see "httpDoS" example). Node doesn't provide anything similar for regular sockets, options:
 - Manual implementation (pure event oriented, make it only with much love :):
- - See the fuzzer example
+ - See the "fuzzer" example
  - A web path brute-forcer (by @jpenalbae): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
 - [Async](https://github.com/caolan/async)
   - Mew approach (also caloan): [Highland](http://highlandjs.org/) (streams)
 - Promises, Generators, ES7 async, etc. : http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
 
 ### Examples
-- [HTTP DoS](examples/asynchrony/httpDoS.js)
-- [Fuzzer](examples/asynchrony/dumbFuzz.js)
-- [Web path brute-force](examples/asynchrony/httpBrutePath.js)
+- [HTTP DoS](asynchrony/httpDoS.js)
+- [Fuzzer](asynchrony/dumbFuzz.js)
+- [Web path brute-force](asynchrony/httpBrutePath.js)
 - Slow attacks
 - Host/port scanner
 - Credentials brute-forcer
-- Continuous pentesting
+- [Continuous pentesting](https://github.com/jesusprubio/bluebox-ng/blob/master/examples/continuousPentestSbD.js)
 
 
 ## 4. A good NPM module
@@ -123,9 +132,9 @@ We think it's the better way to contribute to make the Node community still more
 - [Retire.js](https://github.com/bekk/retire.js)
  - [grunt-retire](https://github.com/bekk/grunt-retire)
 - [time-require](https://github.com/jaguard/time-require)
-- Debugging: Node-inspector (external to the package)
+- Debugging:
  - Install: `npm install -g node-inspector`
- - Use: `node-debug examples/libraries/sockets/udp.js`
+ - Use: `node-debug libraries/sockets/udp.js`
 
 ### Example
  - [Exploitsearch](https://github.com/jesusprubio/node-exploitsearch-client)
@@ -136,26 +145,30 @@ TODO
 
 
 ## 6. Finishing touches
+TODO
 
 ### Examples
-- Path references
+TODO
+- [Path](https://nodejs.org/api/path.html) (Core): Path references
+- [URL](https://nodejs.org/api/url.html) (Core): URL parsing
+- [Colors](https://github.com/marak/colors.js/)
 - Cli
- - Colors
- - Commander: Command line
- - https://github.com/SBoudrias/Inquirer.js
- - Celeri: Command line and interactive
+ - [Commander](https://github.com/tj/commander.js): Command line, most used
+ - [Minimist](https://github.com/substack/minimist): Really tiny
+ - [Celeri](https://github.com/crcn/celeri): Command line and interactive
  - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js)
 - Reporting: JSON (Bluebox-ng report)
 - Database: [Mongoose](https://www.youtube.com/playlist?list=PL5wy-Ijp__A2-ZSePUHXPMwpV19MqcNUX)
  - Conectors (Memory, DB, etc.)
-- Logging (Winston)
+- Logging: [Winston](https://github.com/winstonjs/winston)
 - Documentation
+ - ie: https://github.com/eface2face/rtcninja.js
 
 
 ## 7. Bluebox-ng
 - Demo [video](https://www.youtube.com/watch?v=M-6k4Md3qEQ)
  - [Design](https://github.com/jesusprubio/bluebox-ng)
-- Assaultjs: Pentesting and exploiting stuff in Node
+- assaultjs: Pentesting and exploiting stuff in Node
  - **Community**
  - Site: https://assaultjs.github.io/
  - IRC: #assaultjs
