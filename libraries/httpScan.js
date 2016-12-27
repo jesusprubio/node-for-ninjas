@@ -27,7 +27,7 @@ var http = require('http');
 
 http.get('http://www.google.com/index.html', function (res) {
     console.log('Result:');
-//    console.log(res);
+    // console.log(res);
     // Google web server: GFE/2.0
     // https://en.wikipedia.org/wiki/Gmail
     console.log(res.headers.server);

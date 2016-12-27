@@ -25,7 +25,8 @@
 var nmap = require('node-libnmap').nmap,
 
     OPTIONS = {
-        range: ['192.168.1.1', '192.168.1.2'],
+//        range: ['192.168.1.1', '192.168.1.2'],
+        range: ['172.20.0.1'],
         ports: '21-23,80,443',
         nmap: '/usr/local/bin/nmap'
     };
