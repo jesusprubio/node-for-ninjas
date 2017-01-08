@@ -1,30 +1,18 @@
 # Node for ninjas
-A handbook for security experts who like JavaScript and javascripters who like (in)security.
+A workshop for security experts who like JavaScript and javascripters who like (in)security.
 >Don't Reinvent The Wheel, Unless You Plan on Learning More About Wheels
 (by [@codinghorror](http://blog.codinghorror.com/dont-reinvent-the-wheel-unless-you-plan-on-learning-more-about-wheels/))
 
 
 ## 1. Introduction
-This project is a *work in progress*. For now it only includes the examples I use in my workshops, maybe someday I write the whole text :sweat_smile:. By the way I've already included here (and inside the code), the most important observations.
+This project is a *work in progress*. The most important observations are included in the source code of the examples.
 
 ### Motivation
 All we know [JavaScript is taking the world](http://githut.info/), moreover with the Node irruption the rules have changed and we can use the same language also in the server side. All kind of servers were written, specially those ones related with the web (ie: [Express](http://expressjs.com/)), and [are being succesfully used in the wild](http://nodejs.org/industry/). Two years ago we were using Node at work so, one day, we also started to use it to write our day to day security stuff.
 
 During this time I met with people doing the same and we started a [community](https://assaultjs.github.io/) around this idea. Furthermore since we started to write [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) we've been tracking the different security projects we found written in Node. Once we've finished the first stable version we decided to write this document to share what we learn.
 
-Finally I think it's the better way to contribute to make the Node community still more awesome.
-
-### Author
-- Jesús Pérez
- - [@jesusprubio](https://twitter.com/jesusprubio)
- - jesusprubio gmail com
- - [http://jesusprubio.name/](http://jesusprubio.name/)
-
-### Contributors
-- Sergio García
- - [@s3rgiogr](https://twitter.com/s3rgiogr)
- - s3rgio.gr gmail com
-- https://github.com/jesusprubio/node-for-pentesters/graphs/contributors
+Finally we think it's the better way to contribute to make the Node community still more awesome.
 
 ### License & Copyright
 - Code: [<img src="https://fsfe.org/graphics/gplv3-logo-red.png" height="40" alt="GPLv3">](https://www.gnu.org/copyleft/gpl.html)
