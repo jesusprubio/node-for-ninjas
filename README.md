@@ -5,7 +5,7 @@ A workshop for security experts who like JavaScript and javascripters who like (
 
 
 ## 1 Introduction
-This project is a *work in progress*. The most important observations are included in the source code of the examples.
+This project is a *work in progress*. The most important observations are included through the source code.
 
 ### 1.1 Motivation
 All we know [JavaScript is taking the world](http://githut.info/), moreover with the Node irruption the rules have changed and we can use the same language also in the server side. All kind of servers were written, specially those ones related with the web (ie: [Express](http://expressjs.com/)), and [are being succesfully used in the wild](http://nodejs.org/industry/). Two years ago we were using Node at work so, one day, we also started to use it to write our day to day security stuff, ie: [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng).
@@ -67,7 +67,7 @@ Bonus:
  - [MongoDB authentication](./example/auth/mongo.js)
  - [MySQL authentication](./example/auth/mysql.js)
 - DNS:
- - Resolution (and reverse)](./example/dns/req.js)
+ - [Resolution (and reverse)](./example/dns/req.js)
  - [Zone transfer](./example/dns/axfr.js)
  - [Brute-force](./example/dns/brute.js)
 - [SHODAN](https://github.com/jesusprubio/shodan-client.js/tree/master/example)
@@ -77,7 +77,7 @@ Bonus:
  - [Mutator](./example/fuzz/mutator.js)
  - [Custom mutator](./example/fuzz/mutatorCustom.js)
 - [Sockets](./async/sockets): UDP, TCP, TLS, WS(S).
-- [HTTP proxy](./example/httpProxy.js))
+- [HTTP proxy](./example/httpProxy.js)
 
 ### 3.1 External tools
 All in this section need to be installed in the system.
@@ -160,7 +160,7 @@ Multiple options:
 - Refactoring: https://github.com/jesusprubio/bluebox-ng/tree/v2
 - [Ways of use](https://github.com/jesusprubio/bluebox-ng/tree/v2#use)
 
-### 3.1 Examples
+### 7.1 Examples
 - Console CLI: bluebox-ng
 - [Library (CLI)](https://github.com/jesusprubio/bluebox-ng/tree/v2#programatically)
 - [Library (methods)](https://github.com/jesusprubio/bluebox-ng/tree/v2#library)
