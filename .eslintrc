@@ -3,7 +3,8 @@
 
   "rules": {
     "max-len": [1, 100, 4],
-    "strict": [0]
+    "strict": [0],
+    "no-console": [0]
   },
 
   "plugins": ["json"]
