@@ -46,6 +46,7 @@
     "moira": "^1.1.2",
     "mongodb": "^2.2.22",
     "mysql": "^2.5.5",
+    "n-readlines": "^0.2.7",
     "node-wifiscanner": "^0.2.0",
     "pcap": "https://github.com/mranney/node_pcap#fff6919e15b34ebbf5e7c0b1f1e61ae84dcbcb39",
     "ping": "^0.1.9",

@@ -95,31 +95,38 @@ All in this section need to be installed in the system.
 
 
 ## 4 Asynchrony
-Common solution: To use a loop and the parameter **["maxSockets"](https://nodejs.org/api/http.html#http_agent_maxsockets)**.
-- Valid for servers but, in general, not for this kind of tools (the ["httpDoS"](./async/httpDoS.js) example is an exception which fits).
+Other languages need threads to fly. Node/JavaScript is async so it flies too much, then we need to limit it to avoid a break, ie: OS limit with file descriptors, OS limit for opened sockets, etc.
+
+A common solution is to use a loop and the parameter **["maxSockets"](https://nodejs.org/api/http.html#http_agent_maxsockets)**. This is valid for servers but, in general, not for this kind of tools (the ["httpDoS"](./async/httpDoS.js) example is an exception which fits).
 - Node core doesn't provide anything similar for TCP or UDP sockets (only HTTP).
-Multiple options:
+
+### Multiple options
 - **Pure event oriented** implementation: Make it only with much love :):
- - See the ["fuzzer"](./async/dumbFuzz.js)) example.
+ - See the ["fuzzer"](./async/dumbFuzz.js) example.
  - A web path brute-forcer (by [@NighterMan](https://twitter.com/NighterMan)): https://gist.github.com/jpenalbae/46782408bebe8e61eb32
 - **[async.js](https://github.com/caolan/async)**
  - New approach (also caloan): [Highland](http://highlandjs.org/) (streams)
-- **Promises**: What we're going to use :). Why bluebird?
- - Deep explanation [here](https://nodesource.com/blog/enterprise-grade-node-js-promises-with-async-and-bluebird).
- - http://bluebirdjs.com/docs/api/promise.map.html
- - https://github.com/jesusprubio/bluebox-ng/blob/v2/lib/index/brute.js#L85
- - https://github.com/jesusprubio/bluebox-ng/blob/v2/lib/index/brute.js#L93
- - Other cool things: "mapSeries", "promisify", "finally", "delay", "timeout" ...
-- **Generators**: A little pain :(.
+- **Promises**: What we're going to use :). Deep explanation [here](https://nodesource.com/blog/enterprise-grade-node-js-promises-with-async-and-bluebird).
+- **Generators**: Still knowing each other xD.
 - **async/await**: Nice, in our TODO :). It uses generators under the hood and can be combined with promises, killing the complexiy.
  - http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
  - http://rossboucher.com/await
+- **Iterators**: To avoid a break due to a huge memory fingerprint.
+  - [Example](./async/iterators.js)
+  - https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators
+
+### Our choice
+- Event oriented: We want performance, so we don't want libraries doing this part for us.
+- Manually limiting the number of active connections.
+- We also need to specify a delay -> "setInterval"
+- Iterators: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators
+- Promises: for convenience to develop.
+- Example: https://github.com/jesusprubio/bluebox-ng/blob/master/lib/index/brute.js
 
 
 ## 5 A good NPM module
-
-### 5.1 Hints
 - [package.json](https://docs.npmjs.com/files/package.json)
+- [__dirname](https://nodejs.org/docs/latest/api/globals.html#globals_dirname) vs [process.cwd](https://nodejs.org/api/process.html#process_process_cwd)
 - Patterns:
  - [Singleton](http://thenodeway.io/posts/designing-singletons/)
  - [Custom Type](http://thenodeway.io/posts/designing-custom-types/)
@@ -133,41 +140,40 @@ Multiple options:
  - [VS Code](https://code.visualstudio.com/Docs/runtimes/nodejs#_debugging-hello-world). Now with [inline values support](http://code.visualstudio.com/updates/v1_9#_inline-variable-values-in-source-code)!.
 - [Testing](https://github.com/tapjs/node-tap)
 - [yarn](https://github.com/yarnpkg/yarn) :)
+- Do not parse stuff manually:
+ - [Path](https://nodejs.org/api/path.html) (Core): Path references
+ - [URL](https://nodejs.org/api/url.html) (Core): URL parsing
+
+### 5.1 CLI
+- [Colors](https://github.com/marak/colors.js/)
+- Printing big JSON: ["utils.inspect"](https://nodejs.org/api/util.html#util_util_inspect_object_options) vs. ["prettyjson"](https://github.com/rafeca/prettyjson)
+- [Commander](https://github.com/tj/commander.js): Command line, most used
+- [Minimist](https://github.com/substack/minimist): Really tiny
+- [Vorpal](https://github.com/dthree/vorpal): Interactive
+  - https://github.com/dthree/vorpal/wiki/FAQ#what-is-an-immersive-cli-app
+  - https://github.com/vorpaljs/awesome-vorpal#vorpal-extensions
+- [Emojis](https://github.com/omnidan/node-emoji)
+- Doc:
+ - https://github.com/jesusprubio/bluebox-ng/tree#use
+ - https://github.com/jesusprubio/bluebox-ng/tree/doc
 
 ### 5.2 Example
 [Exploitsearch](https://github.com/jesusprubio/exploitsearch.js)
 
 
-## 6 Bonus hints
-- Do not parse stuff manually:
- - [Path](https://nodejs.org/api/path.html) (Core): Path references
- - [URL](https://nodejs.org/api/url.html) (Core): URL parsing
-- CLI
- - [Colors](https://github.com/marak/colors.js/)
- - Printing big JSON: ["utils.inspect"](https://nodejs.org/api/util.html#util_util_inspect_object_options) vs. ["prettyjson"](https://github.com/rafeca/prettyjson)
- - [Commander](https://github.com/tj/commander.js): Command line, most used
- - [Minimist](https://github.com/substack/minimist): Really tiny
- - [Vorpal](https://github.com/dthree/vorpal):Interactive
- - [Manual implementation](https://github.com/assaultjs/assaultjs/blob/master/bin/client.js) xD
-- Doc:
- - https://github.com/jesusprubio/bluebox-ng/tree/v2#use
- - https://github.com/jesusprubio/bluebox-ng/tree/v2/doc
-
-
-## 7 Bluebox-ng
+## 6 Bluebox-ng
 "Pentesting framework using Node.js powers. Specially focused in VoIP/UC."
 - [Demo](https://www.youtube.com/watch?v=M-6k4Md3qEQ) old version.
-- Refactoring: https://github.com/jesusprubio/bluebox-ng/tree/v2
-- [Ways of use](https://github.com/jesusprubio/bluebox-ng/tree/v2#use)
+- Refactoring: https://github.com/jesusprubio/bluebox-ng
+- [Ways of use](https://github.com/jesusprubio/bluebox-ng/tree/#use)
 
-### 7.1 Examples
+### 6.1 Examples
 - Console CLI: bluebox-ng
 - [Library (CLI)](https://github.com/jesusprubio/bluebox-ng/tree/v2#programatically)
 - [Library (methods)](https://github.com/jesusprubio/bluebox-ng/tree/v2#library)
  - [Full API](https://github.com/jesusprubio/bluebox-ng/blob/v2/doc/api.md)
-- [P0wning devices](https://github.com/jesusprubio/bluebox-ng/tree/v2/examples/p0wn.js)
 
 
-## 8 More projects
+## 7 More projects
 - [Brosec](https://github.com/gabemarshall/Brosec)
 - [NodeGoat](https://github.com/OWASP/NodeGoat)

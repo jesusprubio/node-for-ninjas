@@ -14,8 +14,8 @@
 const ping = require('tcp-ping');
 
 ping.ping({
-  address: '93.184.216.34',
-  port: 80,
+  address: '192.168.1.77',
+  port: 888,
   timeout: 5000,
   attempts: 3,
 }, (err, res) => {
