@@ -171,8 +171,6 @@ A common solution is to use a loop and the parameter **["maxSockets"](https://no
 ### 6.1 Examples
 - Console CLI: bluebox-ng
 - [Library (CLI)](https://github.com/jesusprubio/bluebox-ng/tree/v2#programatically)
-- [Library (methods)](https://github.com/jesusprubio/bluebox-ng/tree/v2#library)
- - [Full API](https://github.com/jesusprubio/bluebox-ng/blob/v2/doc/api.md)
 
 
 ## 7 More projects
