@@ -157,6 +157,7 @@ A common solution is to use a loop and the parameter **["maxSockets"](https://no
  - https://github.com/jesusprubio/bluebox-ng/tree#use
  - https://github.com/jesusprubio/bluebox-ng/tree/doc
 - Electron: https://github.com/electron/electron-quick-start
+- Polymer: https://www.polymer-project.org/
 
 ### 5.2 Example
 [Exploitsearch](https://github.com/jesusprubio/exploitsearch.js)
