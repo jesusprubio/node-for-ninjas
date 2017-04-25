@@ -49,7 +49,9 @@ Bonus:
 - Modules selection: Those ones which we think to be the best option: stars, commiters, examples!, documentation, etc.
  - https://www.npmjs.com
  - http://npmsearch.com
-
+- REPL:
+ - https://docs.nodejitsu.com/articles/REPL/how-to-use-nodejs-repl/
+ - http://mancy-re.pl/
 
 ## 3 Examples
 - [Ping](./example/ping.js)
