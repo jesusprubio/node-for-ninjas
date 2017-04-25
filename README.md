@@ -99,7 +99,7 @@ Bonus:
 - [HTTP proxy](./example/httpProxy.js)
 
 
-### External tools
+### External tools
 
 All in this section need to be installed in the system.
 
@@ -124,7 +124,7 @@ A common solution is to use a loop and the parameter **["maxSockets"](https://no
 
 - Node core doesn't provide anything similar for TCP or UDP sockets (only HTTP).
 
-### Multiple options
+### Multiple options
 
 - **Pure event oriented** implementation: Make it only with much love :):
   - See the ["fuzzer"](./async/dumbFuzz.js) example.
